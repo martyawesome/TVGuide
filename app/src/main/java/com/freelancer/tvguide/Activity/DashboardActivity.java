@@ -49,6 +49,7 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
     public static int mStart = 0;
     private int mPreviousStart = 0;
     public static int mRemainingChannels;
+    public static int mLastPosition = 0;
     private List<ChannelModel> mCurrentChannels = new ArrayList<>();
     private ChannelAdapter mChannelAdapter;
     private static final String TAG = DashboardActivity.class.getSimpleName();
@@ -73,6 +74,7 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
             mCurrentChannels.clear();
             mStart = 0;
             mRemainingChannels = 0;
+            mLastPosition = 0;
 
             try {
                 mStart = Integer.parseInt(start.getText().toString());
@@ -102,6 +104,7 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
                 progressBar.setVisibility(View.VISIBLE);
                 mCurrentChannels.clear();
                 mRemainingChannels = 0;
+                mLastPosition = 0;
 
                 new WebserviceCall(this, progressBar).getChannels(mPreviousStart);
 
@@ -136,6 +139,7 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
         mChannelAdapter = new ChannelAdapter(this, mCurrentChannels);
         channelsListView.setAdapter(mChannelAdapter);
         channelsListView.setOnScrollListener(new EndlessScrollListener(this, progressBar));
+        channelsListView.setSelection(mLastPosition);
 
     }
 

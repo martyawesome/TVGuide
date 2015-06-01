@@ -38,6 +38,7 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
             if (counter == 1 && DashboardActivity.mRemainingChannels > 0) {
                 // End of list\
                 if (Utils.isNetworkAvailable(context)) {
+                    DashboardActivity.mLastPosition = firstVisibleItem;
                     progressBar.setVisibility(View.VISIBLE);
                     new WebserviceCall(context, progressBar).getChannels(DashboardActivity.mStart);
                 } else {
