@@ -14,6 +14,10 @@ import java.util.List;
 
 /**
  * Created by Android 18 on 6/1/2015.
+ * <p/>
+ * Responsible for displaying the values of the ChannelModels to the ListView.
+ *
+ * @author marty hernandez
  */
 public class ChannelAdapter extends BaseAdapter {
 

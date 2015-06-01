@@ -11,6 +11,10 @@ import com.freelancer.tvguide.Remote.WebserviceCall;
 
 /**
  * Created by Android 18 on 6/1/2015.
+ * <p/>
+ * Custom listener for the Scroll. Checks if the first visible item is equal to the
+ * difference between the total items and the visible item count. If the the position is
+ * at the bottom of the ListView, retrieve the next programs from the API.
  */
 public class EndlessScrollListener implements AbsListView.OnScrollListener {
 

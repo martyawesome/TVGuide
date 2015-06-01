@@ -8,6 +8,12 @@ import java.util.List;
 
 /**
  * Created by Android 18 on 6/1/2015.
+ * <p/>
+ * Serialize the return of the API and parse it to an object.
+ * <p/>
+ * * @author marty hernandez
+ *
+ * @see com.google.gson.Gson
  */
 public class GetChannelsResponse {
 

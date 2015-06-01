@@ -17,18 +17,29 @@ import org.json.JSONObject;
 
 /**
  * Created by Android 18 on 6/1/2015.
+ * <p/>
+ * Handles the method/s for communicating with the API.
  */
 public class WebserviceCall {
 
     private Context context;
     private ProgressBar progressBar;
 
+    /**
+     * Public constructor. Initializes the context and the progress bar.
+     *
+     * @param context
+     * @param progressBar
+     */
     public WebserviceCall(Context context, ProgressBar progressBar) {
         this.context = context;
         this.progressBar = progressBar;
     }
 
     /**
+     * Connect to the API using the asynchronous method from AndroidQuery to get the
+     * list of programs. The JSON wil then be converted to an object using the library GSON.
+     *
      * @param start
      */
     public void getChannels(int start) {

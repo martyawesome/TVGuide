@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
  */
 public class Utils {
 
-
     /**
      * Checks whether the phone, currently, has an Internet connection.
      *

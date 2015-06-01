@@ -65,6 +65,13 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
         return true;
     }
 
+    /**
+     * Method for submitting a request to the API. The value of the parameter is determined by the
+     * value from the EditText start. If Internet connection is not available, get the list of
+     * channels saved from the database and display it instead.
+     *
+     * @author marty hernandez
+     */
     @Click
     void submit() {
 
@@ -90,6 +97,15 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
         }
     }
 
+    /**
+     * The refresh will get a request from the API by passing the previous start value
+     * as the parameter. If not Internet access is available, display the channels saved from
+     * the database instead.
+     *
+     * @author marty hernandez
+     * @param item
+     * @return boolean
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -118,8 +134,11 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
 
     /**
      * Populate the database and the ListView with the channels retrieved from the web service.
-     * This is for on getting of channels on startup.
+     * This is for on getting of channels on startup. Set the custom ScrollListener to handle
+     * the retrieving of channels when the user has scroll to the bottom of the ListView.
+     * Also, return to the position of the last position scrolled.
      *
+     * @author marty hernandez
      * @param response
      */
     @Override
@@ -144,7 +163,8 @@ public class DashboardActivity extends ActionBarActivity implements GetChannelsI
     }
 
     /**
-     * Populate the ListView with channels saved from the database.
+     * Populate the ListView with channels saved from the database.\
+     * @author marty hernandez
      */
     public void populateOfflineChannels() {
         mCurrentChannels.clear();

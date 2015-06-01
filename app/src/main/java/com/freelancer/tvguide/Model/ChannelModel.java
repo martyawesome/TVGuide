@@ -24,6 +24,7 @@ import java.util.List;
  * @see com.google.gson.Gson
  * @see serialization
  * @see Model
+ * @see com.activeandroid.ActiveAndroid
  */
 @Table(name = "channel")
 public class ChannelModel extends Model {

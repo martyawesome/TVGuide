@@ -10,11 +10,20 @@ import com.freelancer.tvguide.R;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 
+/**
+ * SplashActivity. Display the app icon before starting the DashboardActivity.
+ * <p/>
+ * * @author marty hernandez
+ */
 @EActivity(R.layout.activity_splash)
 public class SplashActivity extends ActionBarActivity {
 
     private Context mContext = SplashActivity.this;
 
+    /**
+     * Created a Handler to wait for 3 seconds before starting to the next Activity.
+     * * @author marty hernandez
+     */
     @AfterViews
     void initialize() {
 
